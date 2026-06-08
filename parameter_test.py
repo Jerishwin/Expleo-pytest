@@ -10,6 +10,8 @@ def test_url(input_broser,input_url):
     if input_broser=="chrome":
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
+        options.add_argument('--no-sandbox')     
+        options.add_argument('--disable-dev-shm-usage')
         driver=webdriver.Chrome(options)
     if input_broser=="firefox":
         options = webdriver.FirefoxOptions()

@@ -8,4 +8,6 @@ def test_search(search_term):
     driver = webdriver.Chrome()
     driver.maximize_window()
     driver.get("www.google.com")
-    search = driver.find_element(By.ID,"")
+    search = driver.find_element(By.ID,"APjFqb")
+    search.send_keys(search_term)
+    driver.close()
