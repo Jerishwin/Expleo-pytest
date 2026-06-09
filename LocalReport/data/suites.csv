@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2880","test_search[selenium]","","2026-06-09","passed","2026-06-09","","demo3_test","",""
+"","4584","test_search[selenium locators]","","2026-06-09","passed","2026-06-09","","demo3_test","",""
+"","2658","test_search[pytest]","","2026-06-09","passed","2026-06-09","","demo3_test","",""
