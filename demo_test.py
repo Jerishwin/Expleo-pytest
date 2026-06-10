@@ -9,7 +9,7 @@ def test_sample_2():
     print("Hello")
     x=5
     y=5
-    assert x=y
+    assert x==y
 
 @pytest.mark.smoke
 def test_sample_3():
