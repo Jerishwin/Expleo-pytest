@@ -7,9 +7,6 @@ from Utilities.logger import get_logger
 
 @pytest.mark.usefixtures("setup")
 class TestLogin:
-    
-
-
     @pytest.mark.parametrize("email,password",get_data("login_data.xlsx", "ValidLoginData"))
     def test_valid_login(self, email, password):
         logger = get_logger()

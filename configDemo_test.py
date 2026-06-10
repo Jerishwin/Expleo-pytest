@@ -2,7 +2,7 @@ import pytest
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import read_config
+import PomDemo.utilities.read_config as read_config
 
 @pytest.mark.parametrize('search_term',[('selenium'),('pytest'),('selenium locators')])
 def test_search(search_term):

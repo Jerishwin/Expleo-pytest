@@ -1,8 +1,8 @@
 import pytest
-import read_config
+from utilities.read_config import get_config
 from selenium import webdriver
 
-@pytest.fixture(params=[read_config.get_config("browser","name")])
+@pytest.fixture(params=[get_config("browser","name")])
 def setup_teardown(request):
     if request.param == "chrome":
         driver = webdriver.Chrome()
@@ -12,7 +12,7 @@ def setup_teardown(request):
         driver = webdriver.Edge()
     driver.maximize_window()
     driver.implicitly_wait(5)
-    driver.get(read_config.get_config("url","name"))
+    driver.get(get_config("url","base"))
     request.cls.driver=driver
     yield
     driver.quit()

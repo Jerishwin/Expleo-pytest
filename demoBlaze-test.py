@@ -1,5 +1,5 @@
 import pytest
-import read_config
+import PomDemo.utilities.read_config as read_config
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
