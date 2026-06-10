@@ -1,0 +1,1 @@
+[32mINFO    [0m FrameworkLogger:login_test.py:42 Entering Email : hlhls@gmail.com

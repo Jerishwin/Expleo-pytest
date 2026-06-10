@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="4" time="23.865" timestamp="2026-06-10T05:39:25.748284+05:30" hostname="VIGNESHWARAN"><testcase classname="Tests.login_test.TestLogin" name="test_valid_login[hlhl@gmail.com-admin1]" time="21.260" /><testcase classname="Tests.login_test.TestLogin" name="test_invalid_login[hlhls@gmail.com-admin-Warning: No match for E-Mail Address and/or Password.]" time="18.684"><failure message="AssertionError: assert 'Warning: No .../or Password.' == 'Warning: You...in in 1 hour.'&#10;  &#10;  #x1B[0m#x1B[91m- Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour.#x1B[39;49;00m#x1B[90m#x1B[39;49;00m&#10;  #x1B[92m+ Warning: No match for E-Mail Address and/or Password.#x1B[39;49;00m#x1B[90m#x1B[39;49;00m">self = &lt;Tests.login_test.TestLogin object at 0x00000155CA18CC50&gt;, email = 'hlhls@gmail.com', password = 'admin'
+message = 'Warning: No match for E-Mail Address and/or Password.'
+
+    @pytest.mark.parametrize("email,password,message",get_data("login_data.xlsx", "InvalidLoginData"))
+    def test_invalid_login(self, email, password, message):
+        logger = get_logger()
+        wait = WebDriverWait(self.driver, 30)
+        self.driver.save_screenshot("homepage.png")
+        print("Current URL:", self.driver.current_url)
+        print("Title:", self.driver.title)
+        print("Page Source Length:", len(self.driver.page_source))
+        wait.until(EC.element_to_be_clickable((By.XPATH, "//i[@class = \"fa fa-user\"]"))).click()
+        wait.until(EC.element_to_be_clickable((By.LINK_TEXT, "Login"))).click()
+        logger.info(f"Entering Email : {email}")
+        wait.until(EC.visibility_of_element_located((By.ID, "input-email"))).send_keys(email)
+        self.driver.find_element(By.ID, "input-password").send_keys(password)
+        self.driver.find_element(By.XPATH,"//input[@value='Login']").click()
+&gt;       assert message == wait.until(EC.visibility_of_element_located((By.XPATH, "//div[contains(@class ,\"alert\")]"))).text
+E       AssertionError: assert 'Warning: No .../or Password.' == 'Warning: You...in in 1 hour.'
+E         
+E         #x1B[0m#x1B[91m- Warning: Your account has exceeded allowed number of login attempts. Please try again in 1 hour.#x1B[39;49;00m#x1B[90m#x1B[39;49;00m
+E         #x1B[92m+ Warning: No match for E-Mail Address and/or Password.#x1B[39;49;00m#x1B[90m#x1B[39;49;00m
+
+Tests\login_test.py:46: AssertionError</failure></testcase><testcase classname="Tests.login_test.TestLogin" name="test_invalid_login[hlhl@gmail.com-admin123-Warning: No match for E-Mail Address and/or Password.]" time="21.135" /><testcase classname="Tests.login_test.TestLogin" name="test_valid_login[hlhl@gmail.com-admin0]" time="20.697" /></testsuite></testsuites>

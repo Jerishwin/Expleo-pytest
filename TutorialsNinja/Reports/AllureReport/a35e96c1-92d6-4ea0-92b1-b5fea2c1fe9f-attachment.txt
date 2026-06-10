@@ -1,0 +1,3 @@
+[32mINFO    [0m FrameworkLogger:login_test.py:17 Opening TutorialsNinja Website
+[32mINFO    [0m FrameworkLogger:login_test.py:20 Entering Email : hlhl@gmail.com
+[32mINFO    [0m FrameworkLogger:login_test.py:26 Login Successful

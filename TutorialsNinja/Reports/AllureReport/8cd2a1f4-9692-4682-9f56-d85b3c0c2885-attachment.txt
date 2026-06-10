@@ -1,0 +1,2 @@
+[32mINFO    [0m FrameworkLogger:login_test.py:23 Entering Email : hlhl@gmail.com
+[32mINFO    [0m FrameworkLogger:login_test.py:29 Login Successful
